@@ -19,7 +19,7 @@ jobs:
           method: jwt
           role: github-actions
           secrets: |
-            secret/data/myapp username | MYAPP_USERNAME
+            secret/data/myapp username | MYAPP_USERNAME ;
             secret/data/myapp password | MYAPP_PASSWORD
 
       - name: Test Vault secret
