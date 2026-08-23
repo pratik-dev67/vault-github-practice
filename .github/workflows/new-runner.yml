@@ -1,0 +1,19 @@
+name: Test Self-Hosted Runner
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-runner:
+    runs-on: self-hosted
+
+    steps:
+      - name: Show runner information
+        run: |
+          echo "===== GitHub Runner Test ====="
+          echo "Runner Name: $RUNNER_NAME"
+          echo "Hostname: $(hostname)"
+          echo "User: $(whoami)"
+          echo "OS: $(uname -a)"
+          echo "Current Directory: $(pwd)"
+          echo "Runner test successful!"
