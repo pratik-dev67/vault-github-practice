@@ -2,18 +2,21 @@ name: Workflow, Job, and Step Outputs
 
 on:
   workflow_dispatch:
+
 jobs:
- job-1:
+  job-1:
     runs-on: ubuntu-22.04
     steps:
       - run: echo "A job consists of"
       - run: echo "one or more steps"
       - run: echo "which run sequentially"
       - run: echo "within the same compute environment"
+
   job-2:
     runs-on: ubuntu-22.04
     steps:
       - run: echo "Multiple jobs can run in parallel"
+
   job-3:
     runs-on: ubuntu-22.04
     needs:
@@ -22,10 +25,11 @@ jobs:
     steps:
       - run: echo "Jobs can depend on other jobs"
       - run: echo "and will only run if the jobs they depend on succeed"
+
   job-4:
     runs-on: ubuntu-22.04
     needs:
       - job-2
       - job-3
     steps:
-      - run: echo "... to form a acyclic graph of jobs"         
+      - run: echo "... to form an acyclic graph of jobs"
